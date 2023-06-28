@@ -5,14 +5,13 @@ import { Suspense, useRef } from "react";
 import { useLoader } from '@react-three/fiber'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 import { DirectionalLightHelper } from "three";
-import { Model } from "./Room";
-// function Model(props) {
-//   const { scene } = useGLTF("/roomComp.glb");
-//   return <primitive object={scene} {...props} />
+function Model(props) {
+  const { scene } = useGLTF("/roomComp.glb");
+  return <primitive object={scene} {...props} />
 
-//   // const fbx = useLoader(FBXLoader, '/room.fbx')
-//   // return <primitive object={fbx} />
-// }
+  // const fbx = useLoader(FBXLoader, '/room.fbx')
+  // return <primitive object={fbx} />
+}
 
 function Loader() {
   const { progress } = useProgress();
