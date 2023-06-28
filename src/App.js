@@ -36,7 +36,7 @@ function App() {
       <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
       <Suspense  fallback={<Loader />}>
         <Model />
-        <Environment preset="night" />
+        {/* <Environment preset="night" /> */}
       </Suspense>
       <Stats/>
     </Canvas>
