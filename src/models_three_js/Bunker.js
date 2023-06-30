@@ -10,7 +10,7 @@ import { Loader } from "../components/Loader";
 
 export default function Bunker() {
 
-    var [camera,setCamera] = useState([0.1,1,1]);
+    var [camera,setCamera] = useState([0.5,1,2]);
 
     var handleClick = (setCordinates) => {
         setCamera(setCordinates);
@@ -32,9 +32,7 @@ export default function Bunker() {
                 {/* <spotLight intensity={0.4} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow/> */}
                 <Suspense fallback={<Loader />}>
                     <Underground_bunker />
-                    <Html position={[50, 25, 50]} contextMenu="Dev">
-                        <Button onClick={() => setCamera([0.8, 2, 1])} >Q1</Button>
-                    </Html>
+                        <Button position={[50,50,200]} onClick={() => setCamera([0.8, 2, 1])} >Q1</Button>
                                     {/* <Environment preset="sunset"> </Environment> */}
 
                 </Suspense>
