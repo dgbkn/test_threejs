@@ -12,7 +12,7 @@ export function Model(props) {
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.Roof_Or_Floor.geometry} material={materials['Scene_-_Root']} position={[0.646, 25.901, 12.605]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={[0.647, 14.292, 27.855]} />
       <mesh castShadow receiveShadow geometry={nodes.Cube.geometry} material={materials.PaletteMaterial001} />
-      <mesh castShadow receiveShadow geometry={nodes.ccs_logo.geometry} material={materials.ccs_logo} position={[6.894, 10.408, 37.412]} rotation={[1.622, 0, -3.141]} scale={4.411} />
+      {/* <mesh castShadow receiveShadow geometry={nodes.ccs_logo.geometry} material={materials.ccs_logo} position={[6.894, 10.408, 37.412]} rotation={[1.622, 0, -3.141]} scale={4.411} /> */}
       <mesh castShadow receiveShadow geometry={nodes.Object_13_1.geometry} material={materials.PaletteMaterial001} />
       <mesh castShadow receiveShadow geometry={nodes.Object_10.geometry} material={materials.podloga} position={[0, 0, 12.42]} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 2.113, 1]} />
       <mesh castShadow receiveShadow geometry={nodes.Object_11.geometry} material={materials.sciana_okno} rotation={[-Math.PI / 2, 0, 0]} />
