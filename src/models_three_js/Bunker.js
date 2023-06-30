@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Stats, OrbitControls, PerspectiveCamera, Html, Environment } from '@react-three/drei'
 import { Suspense } from "react";
 import { Underground_bunker } from "../models_blender/Underground_bunker";
-import { AwesomeButton } from "react-awesome-button";
+// import { AwesomeButton } from "react-awesome-button";
 import Button from "../components/Button";
 import { useState } from "react";
 import { Loader } from "../components/Loader";
@@ -32,9 +32,9 @@ export default function Bunker() {
                 {/* <spotLight intensity={0.4} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow/> */}
                 <Suspense fallback={<Loader />}>
                     <Underground_bunker />
-                    {/* <Html position={[50, 25, 50]} contextMenu="Dev">
+                    <Html position={[50, 25, 50]} contextMenu="Dev">
                         <Button onClick={() => setCamera([0.8, 2, 1])} >Q1</Button>
-                    </Html> */}
+                    </Html>
                                     {/* <Environment preset="sunset"> </Environment> */}
 
                 </Suspense>
