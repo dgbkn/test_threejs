@@ -1,11 +1,16 @@
-import Bunker from "./models_three_js/Bunker";
+import { ChakraProvider } from '@chakra-ui/react'
+import WaitingRoomModel from "./models_three_js/WaitingRoom";
 
 
 function App() {
   return (
+    <ChakraProvider>
     <div>
-      <Bunker />
+      <WaitingRoomModel />
+
     </div>
+    </ChakraProvider>
+
   );
 }
 

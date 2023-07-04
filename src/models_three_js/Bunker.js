@@ -6,9 +6,13 @@ import { Underground_bunker } from "../models_blender/Underground_bunker";
 import Button from "../components/Button";
 import { useState } from "react";
 import { Loader } from "../components/Loader";
+import ScrollingModal from "../components/ScrollingModal";
+import { useDisclosure } from "@chakra-ui/react";
 
 
 export default function Bunker() {
+
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     var [camera,setCamera] = useState([0.5,1,2]);
 
@@ -39,5 +43,8 @@ export default function Bunker() {
 
                 <Stats />
             </Canvas>
+            
+            <ScrollingModal />
+
         </div>)
 }

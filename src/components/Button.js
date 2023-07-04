@@ -1,14 +1,16 @@
 import { Html } from "@react-three/drei";
 import Popup from "reactjs-popup";
 // import 'reactjs-popup/dist/index.css';
+import styles from './Button.module.css';
+import ScrollingModal from "./ScrollingModal";
 
-export default function Button({ position }) {
+export default function Button({ position,onClick }) {
     return (
         <>
-            <Html position={position} contextMenu="Dev" className="popupButton">
+            <Html position={position} contextMenu="Dev">
 
-                <Popup trigger=
-                    {<button> Question 1</button>}
+                {/* <Popup trigger=
+                    {<button  className={styles.buttonSexy}> Question 1</button>}
                     modal nested={false}>
                     {
                         close => (
@@ -25,7 +27,10 @@ export default function Button({ position }) {
                             </div>
                         )
                     }
-                </Popup>
+                </Popup> */}
+        <Button colorScheme='blue' className={styles.buttonSexy} mt={3} onClick={onClick}>
+                Trigger modal
+            </Button>
             </Html>
         </>
 
