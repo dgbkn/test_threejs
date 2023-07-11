@@ -102,7 +102,7 @@ export function Underground_bunker(props) {
               <mesh name="polySurface423_ComputerNCam_0" castShadow receiveShadow geometry={nodes.polySurface423_ComputerNCam_0.geometry} material={materials.ComputerNCam} />
             </group>
           </group>
-          <group name="PerphoratedDiskRotor02" position={[-27.271, 4.518, 57.168]} rotation={[-1.636, 0, 0]}>
+          <group name="PerphoratedDiskRotor02"  position={[-27.271, 4.518, 57.168]} rotation={[-1.636, 0, 0]}>
             <group name="polySurface426">
               <mesh name="polySurface426_ComputerNCam_0" castShadow receiveShadow geometry={nodes.polySurface426_ComputerNCam_0.geometry} material={materials.ComputerNCam} />
             </group>

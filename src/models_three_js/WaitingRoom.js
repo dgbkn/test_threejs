@@ -19,9 +19,11 @@ export default function WaitingRoomModel() {
                 {/* <PointerLockControls /> */}
                 <OrbitControls target={[0.0002, 1.2, 0]} maxDistance={0.1} enableZoom={true} zoomSpeed={10} maxZoom={500} />
                 {/* <OrthographicCamera  makeDefault position={[0.1, 10, 4]} fov={60} zoom={20  } /> */}
-                <ambientLight intensity={0.1} castShadow />
+                <ambientLight intensity={0.15} castShadow />
                 {/* <hemisphereLight castShadow/> */}
-                <pointLight distance={0.1}/>
+            
+                <pointLight intensity={0.6} position={[-23.657, 345.553, -68.855]} />
+
                 <directionalLight castShadow position={[600, 250, 200]} shadow-mapSize={[5024, 5024]} >
                     <orthographicCamera attach="shadow-camera" args={[15, 40, 10, 20]} />
                 </directionalLight>
