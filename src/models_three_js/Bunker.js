@@ -9,6 +9,7 @@ import { Loader } from "../components/Loader";
 import ScrollingModal from "../components/ScrollingModal";
 import { useDisclosure } from "@chakra-ui/react";
 import { WaitingRoom } from "../models_blender/WaitingRoom";
+import { ControlRoom } from "../models_blender/Control_room";
 
 
 export default function Bunker() {
@@ -36,7 +37,7 @@ export default function Bunker() {
      </directionalLight>     
                 {/* <spotLight intensity={0.4} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow/> */}
                 <Suspense fallback={<Loader />}>
-                    <Underground_bunker />
+                    <ControlRoom />
                         <Button  position={[50,50,200]} onClick={() => setCamera([0.8, 2, 1])} >Q1</Button>
                                     {/* <Environment preset="sunset"> </Environment> */}
 
