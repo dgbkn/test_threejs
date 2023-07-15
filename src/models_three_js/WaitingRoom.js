@@ -32,7 +32,7 @@ export default function WaitingRoomModel() {
 
                 {/* <RandomizedLight /> */}
                 <Suspense fallback={<Loader />}>
-                    <CrRoom />
+                    <ControlRoom />
                     {/* <Environment preset="sunset"> </Environment> */}
 
                 </Suspense>
