@@ -8,6 +8,7 @@ import { Loader } from "../components/Loader";
 import ScrollingModal from "../components/ScrollingModal";
 import { WaitingRoom } from "../models_blender/WaitingRoom";
 import { ControlRoom } from "../models_blender/Control_room";
+import { CrRoom } from "../models_blender/CrRoom";
 
 
 export default function WaitingRoomModel() {
@@ -31,7 +32,7 @@ export default function WaitingRoomModel() {
 
                 {/* <RandomizedLight /> */}
                 <Suspense fallback={<Loader />}>
-                    <ControlRoom />
+                    <CrRoom />
                     {/* <Environment preset="sunset"> </Environment> */}
 
                 </Suspense>
