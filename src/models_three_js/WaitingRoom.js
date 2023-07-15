@@ -7,8 +7,7 @@ import { useState } from "react";
 import { Loader } from "../components/Loader";
 import ScrollingModal from "../components/ScrollingModal";
 import { WaitingRoom } from "../models_blender/WaitingRoom";
-import { ControlRoom } from "../models_blender/Control_room";
-import { CrRoom } from "../models_blender/CrRoom";
+import { ControlRoom } from "../models_blender/ControlRoom";
 
 
 export default function WaitingRoomModel() {

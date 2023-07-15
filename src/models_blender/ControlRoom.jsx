@@ -1,11 +1,18 @@
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function ControlRoom(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/controlRoom-transformed.glb')
-  const { actions } = useAnimations(animations, group)
+  const { actions } = useAnimations(animations, group);
+  
+  useEffect(() => {
+    console.log(actions);
+    actions["Hologram|HologramAction.002"].play();
+    // actions["Take 001"].play();
+  }, []);
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
@@ -35,7 +42,7 @@ export function ControlRoom(props) {
         <mesh name="Table_Table_0" castShadow receiveShadow geometry={nodes.Table_Table_0.geometry} material={materials.Table} position={[-38.592, -5.069, -61.708]} rotation={[-Math.PI / 2, 0, 0]} scale={3.114} />
         <mesh name="Boite_Objet3_0" castShadow receiveShadow geometry={nodes.Boite_Objet3_0.geometry} material={materials.Objet3} position={[-131.312, -4.875, 41.92]} rotation={[-Math.PI, 0.004, -Math.PI]} scale={0.037} />
         <mesh name="Cendrier1_Objet2_0" castShadow receiveShadow geometry={nodes.Cendrier1_Objet2_0.geometry} material={materials.Objet2} position={[-87.012, 17.464, 31.832]} rotation={[0, 1.568, 0]} scale={0.077} />
-        <mesh name="Room_Room_Room1_0" castShadow receiveShadow geometry={nodes.Room_Room_Room1_0.geometry} material={materials['3d wallpaper']} position={[240.989, -11.055, 5.09]} scale={0.175} />
+        <mesh name="Room_Room_Room1_0" castShadow receiveShadow geometry={nodes.Room_Room_Room1_0.geometry} material={materials['3d wallpaper']}  position={[240.989, -11.055, 5.09]} scale={0.175} />
         <mesh name="Neon12_Objet_0" castShadow receiveShadow geometry={nodes.Neon12_Objet_0.geometry} material={materials.Objet} position={[236.068, -11.045, 4.462]} scale={0.171} />
         <mesh name="Box02_Chairback_0" castShadow receiveShadow geometry={nodes.Box02_Chairback_0.geometry} material={materials.Chairback} position={[30.76, 10.52, 15.859]} rotation={[-Math.PI / 2, 0, -2.255]} scale={0.337} />
         <mesh name="Object_3001" castShadow receiveShadow geometry={nodes.Object_3001.geometry} material={materials.material_poster} position={[12.777, 29.504, -128.226]} rotation={[-Math.PI / 2, 0, 0]} scale={0.229} />
