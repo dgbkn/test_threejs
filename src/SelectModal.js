@@ -16,6 +16,7 @@ export default function SelectModal() {
         <li> <Link to="/waitingroom">Waiting Room</Link></li>
         <li> <Link to="/bunker">Bunker</Link></li>
         <li> <Link to="/controlroom">Control Room</Link></li>
+        <li> <Link to="/jailroom">Jail Room</Link></li>
         <li> <Link to="/finalroom">Final Room</Link></li>
         </ul>
     </div>

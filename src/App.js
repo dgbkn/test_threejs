@@ -6,6 +6,7 @@ import WaitingRoomModel from './models_three_js/WaitingRoom'
 import BunkerModal from './models_three_js/Bunker'
 import ControlRoomModel from './models_three_js/ControlRoom'
 import TestingRoomModal from './models_three_js/TestingRoom';
+import JailRoomModal from './models_three_js/JailRoom';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/waitingroom" element={<WaitingRoomModel />} />
             <Route path="/bunker" element={<BunkerModal />} />
             <Route path="/controlroom" element={<ControlRoomModel />} />
+            <Route path="/jailroom" element={<JailRoomModal />} />
             <Route path="/finalroom" element={<FinalRoomModal />} />
 
 
