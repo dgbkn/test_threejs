@@ -6,10 +6,10 @@ import Button from "../components/Button";
 import { useState } from "react";
 import { Loader } from "../components/Loader";
 import ScrollingModal from "../components/ScrollingModal";
-import { Underground_bunker } from "../models_blender/Underground_bunker";
+import { TestingRoom } from "../models_blender/TestingRoom";
 
 
-export default function BunkerModal() {
+export default function TestingRoomModal() {
 
     return (
         <div style={{ width: "100vw", height: "100vh" }}>
@@ -19,20 +19,20 @@ export default function BunkerModal() {
                 <PerspectiveCamera makeDefault position={[0, 0, 0]} fov={60} zoom={0.8} />
                 {/* <FirstPersonControls  movementSpeed={10} /> */}
                 {/* <PointerLockControls /> */}
-                <OrbitControls target={[-1, 0.5, 2.5]} maxDistance={0.1} enableZoom={true} zoomSpeed={10} maxZoom={500} />
+                <OrbitControls target={[-1, 10, 2.5]} maxDistance={0.1} enableZoom={true} zoomSpeed={10} maxZoom={500} />
                 {/* <OrthographicCamera  makeDefault position={[0.1, 10, 4]} fov={60} zoom={20  } /> */}
-                <ambientLight intensity={0.1} castShadow />
+                <ambientLight intensity={0.2} castShadow />
                 {/* <hemisphereLight castShadow/>             */}
                 {/* <pointLight color={"lightgreen"} intensity={0.4} position={[0.657, 0, 0]} /> */}
                 {/* <pointLight color={"green"} intensity={0.3}  castShadow distance={10} position={[20.657, 200.553, 130.855]} /> */}
 
-                <directionalLight intensity={0.8} castShadow position={[40, 40, 150]} shadow-mapSize={[1024, 1024]}>
+                <directionalLight intensity={0.3} castShadow position={[40, 40, 150]} shadow-mapSize={[1024, 1024]}>
                     <orthographicCamera attach="shadow-camera" args={[20, 50, 10, 20]} />
                 </directionalLight>
 
                 {/* <RandomizedLight /> */}
                 <Suspense fallback={<Loader />}>
-                    <Underground_bunker />
+                    <TestingRoom />
                     {/* <Environment preset="sunset"> </Environment> */}
 
                 </Suspense>

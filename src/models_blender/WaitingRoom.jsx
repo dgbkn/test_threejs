@@ -62,7 +62,7 @@ export function WaitingRoom(props) {
         <mesh name="ccs_logo001"  material-color={"black"}  position={[1.726, 2.184, -1.31]} rotation={[Math.PI / 2, 0, 0]} scale={0.414} castShadow receiveShadow material={materials.ccs_logoSuper} geometry={nodes.ccs_logo001.geometry}  />
       
         <mesh name="O9H8JH0" castShadow receiveShadow geometry={nodes.O9H8JH0.geometry} material={materials.O9H8JH0} position={[0.437, 2.553, 0.208]} scale={[4.88, 1.4, 4.239]} />
-        <mesh name="WhatsApp_Image_2023-07-05_at_233215" castShadow receiveShadow geometry={nodes['WhatsApp_Image_2023-07-05_at_233215'].geometry} material={materials['WhatsApp Image 2023-07-05 at 23.32.15']} position={[1.069, 1.44, -1.396]} rotation={[1.554, -0.054, -0.001]} scale={0.757} />
+        <mesh name="WhatsApp_Image_2023-07-05_at_233215"  castShadow receiveShadow geometry={nodes['WhatsApp_Image_2023-07-05_at_233215'].geometry} material={materials['WhatsApp Image 2023-07-05 at 23.32.15']} position={[1.069, 1.44, -1.396]} rotation={[1.554, -0.054, -0.001]} scale={0.757} />
         <mesh name="Raptus_Hexx" castShadow receiveShadow geometry={nodes.Raptus_Hexx.geometry} material={materials['Raptus Hexx']} />
         <mesh name="Cart001_Cart_Cover_0" castShadow receiveShadow geometry={nodes.Cart001_Cart_Cover_0.geometry} material={materials.Cart_Cover} position={[-0.59, 0.824, -0.983]} rotation={[0, Math.PI / 6, 0]} scale={1.031} />
         <mesh name="Cover_����������_0" castShadow receiveShadow geometry={nodes['Cover_����������_0'].geometry} material={materials.material} position={[0.119, 0.005, 0.155]} rotation={[-Math.PI / 2, 0, 0]} scale={[1.443, 1.473, 1.031]} />
