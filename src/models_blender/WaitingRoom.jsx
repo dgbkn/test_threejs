@@ -12,6 +12,12 @@ export function WaitingRoom(props) {
   const { nodes, materials, animations } = useGLTF('/WaitingRoom-transformed.glb')
   const { actions } = useAnimations(animations, group);
 
+//   useFrame(({ camera }) => {
+
+//     camera.position.x += 0.01;
+//     camera.position.y += 0.01;
+// });
+
 
   useEffect(() => {
     console.log(actions);
@@ -71,7 +77,7 @@ export function WaitingRoom(props) {
         <mesh castShadow receiveShadow position={[-0.430, 1.005, -1.007]} scale={0.43} >
           {/* <HtmlElement /> */}
       <Html occlude={'blending'} distanceFactor={0.6}   position={[-0.0, -0.015, 0.03]}  transform>
-        <video  src='./sq_teaser.mp4' autoPlay muted loop></video>
+        <video  src='./sq_teaser.mp4' autoPlay loop></video>
       </Html>
           </mesh>
         
