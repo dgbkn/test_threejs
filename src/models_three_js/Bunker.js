@@ -14,7 +14,9 @@ export default function BunkerModal() {
     return (
         <div style={{ width: "100vw", height: "100vh" }}>
             <Canvas dpr={[1, 2]}>
-                <Environment files="./pedestrian_overpass_1k.hdr" background blur={0.5} far={300} preset="night" />
+            <fog attach="fog" args={['white', 0, 500]} />
+
+            <Environment files="./dikhololo_night_1k.hdr" background blur={0.5} far={300} />
 
                 <PerspectiveCamera makeDefault position={[0, 0, 0]} fov={60} zoom={0.8} />
                 {/* <FirstPersonControls  movementSpeed={10} /> */}

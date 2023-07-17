@@ -1,13 +1,21 @@
 
 
 import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { Html, useGLTF } from '@react-three/drei'
 
 export function JailRoom(props) {
   const { nodes, materials } = useGLTF('/jailroom-transformed.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes['Hand-_Cuffs'].geometry} material={materials.PaletteMaterial001} position={[-1.055, 0.719, 2.481]} rotation={[-Math.PI / 2, 0, -1.985]} scale={0.004} />
+              <mesh castShadow receiveShadow position={[-0.430, 1.005, -1.007]} scale={0.43} >
+          {/* <HtmlElement /> */}
+      <Html occlude={'blending'} distanceFactor={0.6}   position={[-0.0, -0.015, 0.03]}  transform>
+        <video  src='./sq_teaser.mp4' autoPlay muted loop></video>
+      </Html>
+          </mesh>
+        
+
+      <mesh onClick={() => {alert("Check COOKIE!")}} castShadow receiveShadow geometry={nodes['Hand-_Cuffs'].geometry} material={materials.PaletteMaterial001} position={[-1.055, 0.719, 2.481]} rotation={[-Math.PI / 2, 0, -1.985]} scale={0.004} />
       <mesh castShadow receiveShadow geometry={nodes['03_-_Volume_to_Mesh_-_HAS_MATERIAL'].geometry} material={materials.PaletteMaterial002} />
       <mesh castShadow receiveShadow geometry={nodes.WhatsApp_Image_2023_07_16_at_022553_w_trans.geometry} material={materials.WhatsApp_Image_2023_07_16_at_022553_w_trans} position={[-2.556, 1.135, 2.577]} rotation={[Math.PI / 2, 0, Math.PI]} scale={1.262} />
       <mesh castShadow receiveShadow geometry={nodes.pCube89_lambert1_0.geometry} material={materials.PaletteMaterial001} />
