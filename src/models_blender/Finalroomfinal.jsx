@@ -22,7 +22,7 @@ export function FinalRoom(props) {
 
   useFrame((state, delta) => {
     // console.log('delta', delta);
-    cubeRef.current.rotation.z += 0.01;
+    cubeRef.current.rotation.z += 0.002;
     // cubeRef.current.scale.x = 1 + Math.sin(state.clock.getElapsedTime()) * 0.2;
     // cubeRef.current.scale.y = 1 + Math.sin(state.clock.getElapsedTime()) * 0.1;
     // cubeRef.current.material.emissiveIntensity = 4.5 + Math.sin(state.clock.getElapsedTime()) *4;
