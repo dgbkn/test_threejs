@@ -2,22 +2,44 @@
 
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber';
 
 export function FinalRoom(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/finalroomfinal-transformed.glb')
   const { actions } = useAnimations(animations, group);
 
+  const cubeRef = useRef();
+  const roomRef = useRef();
+
   useEffect(() => {
     console.log('animations', actions,animations);
     // animations[0].name = 0.0000000000000003;
         // actions["10-_wire_135006006Action.001"].play();
   }, []);
+
+  useFrame((state, delta) => {
+    // console.log('delta', delta);
+    cubeRef.current.rotation.z += 0.01;
+    // cubeRef.current.scale.x = 1 + Math.sin(state.clock.getElapsedTime()) * 0.2;
+    // cubeRef.current.scale.y = 1 + Math.sin(state.clock.getElapsedTime()) * 0.1;
+    cubeRef.current.material.emissiveIntensity = 4.5 + Math.sin(state.clock.getElapsedTime()) *4;
+    roomRef.current.material.emissiveIntensity = Math.abs(Math.sin(state.clock.getElapsedTime())) * 2;
+
+
+
+    console.log(    roomRef.current.material.emissiveIntensity );
+  });
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh name="1-_wire_000000000" castShadow receiveShadow geometry={nodes['1-_wire_000000000'].geometry} material={materials.wire_000000000} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh name="10-_wire_135006006" castShadow receiveShadow geometry={nodes['10-_wire_135006006'].geometry} material={materials.wire_135006006} rotation={[Math.PI / 2, 0, 2.863]} />
+        {/* Pure Room ka mesh */}
+        <mesh name="1-_wire_000000000" ref={roomRef} castShadow receiveShadow geometry={nodes['1-_wire_000000000'].geometry} material={materials.wire_000000000} rotation={[Math.PI / 2, 0, 0]} />
+    
+          {/* Cube ka mesh */}
+        <mesh name="10-_wire_135006006" ref={cubeRef} castShadow receiveShadow geometry={nodes['10-_wire_135006006'].geometry} material={materials.wire_135006006} rotation={[Math.PI / 2, 0, 2.863]} />
+        
+        
         <mesh name="11-_wire_140088225" castShadow receiveShadow geometry={nodes['11-_wire_140088225'].geometry} material={materials.wire_140088225} rotation={[Math.PI / 2, 0, 0]} />
         <mesh name="12-_wire_143225087" castShadow receiveShadow geometry={nodes['12-_wire_143225087'].geometry} material={materials.wire_143225087} rotation={[Math.PI / 2, 0, 0]} />
         <mesh name="13-_wire_153228153" castShadow receiveShadow geometry={nodes['13-_wire_153228153'].geometry} material={materials.wire_153228153} rotation={[Math.PI / 2, 0, 0]} />
