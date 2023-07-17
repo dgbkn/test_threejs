@@ -11,6 +11,8 @@ export function FinalRoom(props) {
 
   const cubeRef = useRef();
   const roomRef = useRef();
+  const jailRef = useRef();
+  const platformRef = useRef();
 
   useEffect(() => {
     console.log('animations', actions,animations);
@@ -23,12 +25,15 @@ export function FinalRoom(props) {
     cubeRef.current.rotation.z += 0.01;
     // cubeRef.current.scale.x = 1 + Math.sin(state.clock.getElapsedTime()) * 0.2;
     // cubeRef.current.scale.y = 1 + Math.sin(state.clock.getElapsedTime()) * 0.1;
-    cubeRef.current.material.emissiveIntensity = 4.5 + Math.sin(state.clock.getElapsedTime()) *4;
+    // cubeRef.current.material.emissiveIntensity = 4.5 + Math.sin(state.clock.getElapsedTime()) *4;
     roomRef.current.material.emissiveIntensity = Math.abs(Math.sin(state.clock.getElapsedTime())) * 2;
+    var changeIntensity =  0.5 + Math.abs(Math.cos(state.clock.getElapsedTime() + 2)) * 0.75 ;
+    jailRef.current.material.emissiveIntensity =   changeIntensity;
+    platformRef.current.material.emissiveIntensity =  changeIntensity;
+    cubeRef.current.material.emissiveIntensity = changeIntensity;
+    console.log(changeIntensity);
 
-
-
-    console.log(    roomRef.current.material.emissiveIntensity );
+    // console.log(    roomRef.current.material.emissiveIntensity );
   });
   return (
     <group ref={group} {...props} dispose={null}>
@@ -47,11 +52,17 @@ export function FinalRoom(props) {
         <mesh name="15-_wire_214228153" castShadow receiveShadow geometry={nodes['15-_wire_214228153'].geometry} material={materials.wire_214228153} rotation={[Math.PI / 2, 0, 0]} />
         <mesh name="16-_wire_214229166" castShadow receiveShadow geometry={nodes['16-_wire_214229166'].geometry} material={materials.wire_214229166} rotation={[Math.PI / 2, 0, 0]} />
         <mesh name="17-_wire_224086086" castShadow receiveShadow geometry={nodes['17-_wire_224086086'].geometry} material={materials.wire_224086086} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh name="2-_wire_008008136" castShadow receiveShadow geometry={nodes['2-_wire_008008136'].geometry} material={materials.wire_008008136} rotation={[Math.PI / 2, 0, 0]} />
+     
+     {/* cube ki jali */}
+        <mesh ref={jailRef} name="2-_wire_008008136" castShadow receiveShadow geometry={nodes['2-_wire_008008136'].geometry} material={materials.wire_008008136} rotation={[Math.PI / 2, 0, 0]} />
+       
         <mesh name="3-_wire_055069083" castShadow receiveShadow geometry={nodes['3-_wire_055069083'].geometry} material={materials.PaletteMaterial001} rotation={[Math.PI / 2, 0, 0]} />
         <mesh name="4-_wire_069083055" castShadow receiveShadow geometry={nodes['4-_wire_069083055'].geometry} material={materials.wire_069083055} rotation={[Math.PI / 2, 0, 0]} />
         <mesh name="6-_wire_112169128" castShadow receiveShadow geometry={nodes['6-_wire_112169128'].geometry} material={materials.wire_112169128} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh name="7-_wire_115115115" castShadow receiveShadow geometry={nodes['7-_wire_115115115'].geometry} material={materials.wire_115115115} rotation={[Math.PI / 2, 0, 0]} />
+    
+          {/* the lower platformRef */}
+        <mesh name="7-_wire_115115115" ref={platformRef} castShadow receiveShadow geometry={nodes['7-_wire_115115115'].geometry} material={materials.wire_115115115} rotation={[Math.PI / 2, 0, 0]} />
+   
       </group>
     </group>
   )
